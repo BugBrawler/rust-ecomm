@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link href="/assets/app.css" rel="stylesheet">
+  <title>Document</title>
+</head>
+
+<body>
+  {% include "Navbar.html" %}
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/admin/products">Products</a></li>
+  </ul>
+  {% block main %}<p>Placeholder content</p>{% endblock %}
+</body>
+
+</html>
