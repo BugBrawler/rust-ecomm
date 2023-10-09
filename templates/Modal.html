@@ -1,0 +1,19 @@
+<div x-show="modalOpen" class="relative z-50">
+  <div class="fixed inset-0 bg-black/30" aria-hidden="true"></div>
+  <div @click.outside="modalOpen = false"
+    class="fixed bottom-0 right-0 top-0 flex h-full w-full flex-col border-1 border-neutral-200 bg-white/80 p-6 text-black backdrop-blur-xl dark:border-neutral-700 dark:bg-black/80 dark:text-white md:w-[390px]">
+    <div class="flex items-center justify-between">
+      <p class="text-lg font-semibold">My Cart</p>
+      <button @click="modalOpen = false" @keydown.escape.window="modalOpen = false" aria-label="Close cart">
+        <div
+          class="relative flex h-11 w-11 items-center justify-center rounded-md border border-neutral-200 text-black transition-colors dark:border-neutral-700 dark:text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="h-6 transition-all ease-in-out hover:scale-110">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </div>
+      </button>
+    </div>
+    {% include "Cart.html" %}
+  </div>
+</div>
