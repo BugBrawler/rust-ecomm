@@ -5,19 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/assets/main.css" rel="stylesheet">
   <script defer src="/assets/htmx.min.js"></script>
-  <script defer src="/assets/modal.js"></script>
+  <script defer src="/assets/response-targets.js"></script>
   <title>Document</title>
 </head>
 <body>
-  <header>
-    <ul>
-      <li><a href="/admin/products">Admin</a></li>
-      <li><button>Cart</button></li>
-    </ul>
-  </header>
   {% block main %}
   <p>Placeholder content</p>
   {% endblock %}
-  {% include "modal.html" %}
 </body>
 </html>

@@ -1,0 +1,15 @@
+{% if cart.cart_items.len() == 0 %}
+  <div id="cart">
+    Your cart is empty.
+  </div>
+{% else %}
+  {% for cart_item in cart.cart_items %}
+    <div id="cart">
+      <button>Delete</button>
+      <a href="/products/{{ cart_item.slug }}">{{ cart_item.title }}</a>
+      {{ cart_item.quantity }}
+      <button>+</button>
+      <button>-</button>
+    </div>
+  {% endfor %}
+{% endif %}

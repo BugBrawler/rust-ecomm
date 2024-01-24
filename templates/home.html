@@ -1,26 +1,17 @@
 {% extends "base.html" %}
 
 {% block main %}
-<main class="mx-auto flex max-w-screen-2xl flex-col gap-8 px-4 pb-4 text-black dark:text-white md:flex-row">
-  <div class="order-last min-h-screen w-full md:order-none">
-    <section>
-      {% if products.len() == 0 %}
-      <p>No products found</p>
-      {% else %}
-      <ul class="grid grid-flow-row gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-        {% for product in products %}
-        <li class="aspect-square">
-          <a href="/product/{{ product.slug }}" class="relative inline-block h-full w-full">
-            <div
-              class="group flex h-full w-full items-center justify-center overflow-hidden rounded-lg border bg-white hover:border-blue-600 dark:bg-black relative border-neutral-200 dark:border-neutral-800">
-              {{ product.name }}
-            </div>
+<main>
+  <div>
+    <ul>
+      {% for product in products %}
+        <li>
+          <a href="/products/{{ product.slug }}">
+            {{ product.id }} - {{ product.title }}
           </a>
         </li>
-        {% endfor %}
-      </ul>
-      {% endif %}
-    </section>
+      {% endfor %}
+    </ul>
   </div>
 </main>
 {% endblock %}

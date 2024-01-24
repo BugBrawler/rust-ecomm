@@ -1,0 +1,18 @@
+<form
+{% match form.variant %}
+  {% when crate::views::partials::FormVariant::Create %}
+    hx-post="/admin/products/create"
+  {% when crate::views::partials::FormVariant::Update with (product_id) %}
+    hx-put="/admin/products/{{ product_id }}"
+{% endmatch %}
+hx-trigger="submit" hx-swap="none">
+  {% for input in form.inputs %}
+    {% match input.type %}
+      {% when InputType::TextInput %}
+        {% include "../partials/text_input.html" %}
+      {% when InputType::RichTextInput %}
+        {% include "../partials/rich_text_input.html" %}
+    {% endmatch %}
+  {% endfor %}
+  <button>Submit</button>
+</form>

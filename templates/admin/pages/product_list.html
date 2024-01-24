@@ -1,0 +1,19 @@
+{% extends "../base_admin.html" %}
+
+{% block main %}
+<main>
+  <div><a href="/admin/products/create">Create Product</a></div>
+  <div>
+    <ul>
+      {% for product in products %}
+        <li>
+          <a href="/admin/products/{{ product.id }}">
+            {{ product.id }} - {{ product.title }}
+          </a>
+          <button hx-delete="/admin/products/{{ product.id }}" hx-trigger="click">Delete</button>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</main>
+{% endblock %}

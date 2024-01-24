@@ -1,9 +1,8 @@
 {% extends "base.html" %}
 
 {% block main %}
-<h1>{{ product.name }}</h1>
-<p>{{ product.price }}</p>
-<form hx-post="/cart" hx-trigger="submit" hx-target="#modal-body" hx-swap="outerHTML">
+<h1>{{ product.title }}</h1>
+<form hx-post="/cart" hx-trigger="submit" hx-target="#cart" hx-swap="outerHTML">
   <input type="hidden" name="product_id" value="{{ product.id }}" />
   <button @click="modalOpen = true" type="submit">Add To Cart</button>
 </form>

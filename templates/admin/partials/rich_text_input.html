@@ -1,0 +1,7 @@
+<div id="{{ input.swap_id }}" hx-swap-oob="true">
+  <label for="{{ input.name }}">{{ input.label }}</label>
+  <textarea name="{{ input.name }}" id="{{ input.name }}">{{ input.value }}</textarea>
+  {% if input.error.len() > 0 %}
+    <div>{{ input.error }}</div>
+  {% endif %}
+</div>
